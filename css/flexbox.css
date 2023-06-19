@@ -1,0 +1,167 @@
+/*Seleccionamos el container del header principal*/
+.headerPrincipal .container {
+
+    /*Aplicamos flexbox al container*/
+    display: flex;
+
+    /*Alineamos los elementos ak centro en el eje vertical*/
+    align-items: center;
+
+    /* Distribuir items uniformemente El primer item al inicio, el último al final */
+    justify-content: space-between;
+}
+
+/*Selecionamos el navegador*/
+.headerPrincipal-nav {
+
+    /*Le damos display flex para que se alineen de forma horizontal*/
+    display: flex;
+}
+
+/*Nav contenedor del mapa de cursos*/
+.rodapePrincipal-navMap-list {
+    /*Aplicamos flex*/
+    display: flex;
+
+    /*Y los ponemos en forma de columnas*/
+    flex-direction: column;
+
+    /*Por cada 250px de altura la columna se alineará al costado*/
+    height: 250px;
+
+    /*Los elementos flex son colocados en varias líneas*/
+    flex-wrap: wrap;
+}
+
+/*Este item será el primero de nuestro navegador*/
+.headerPrincipal-nav-link-app {
+    order: -1;
+}
+
+/*Contenedor de cursos*/
+.contenidoPrincipal-cursos {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/*Contenedor de link de cursos*/
+.contenidoPrincipal-cursos-link {
+    display: flex;
+    width: 23%;
+}
+
+/*Entramos al container del footer y le damos display flex*/
+.rodapePrincipal-patrocinadores .container {
+    display: flex;
+}
+
+/*Alineamos los patrocinadores uno a lado de otro y centramos de forma horizontal*/
+.rodapePrincipal-patrocinadores-list {
+    display: flex;
+    align-items: center;
+
+    /*Le damos un porcentaje de ancho para que los items se separen*/
+    width: 70%;
+
+    /*Le damos un espacio respecto al formulario*/
+    margin-right: 5%;
+
+    /*Le damos el mismo espacio a su alrededor*/
+    justify-content: space-around;
+}
+
+
+/*Aplicamos flex al contenedor del video*/
+.videoSobre .container {
+    display: flex;
+}
+
+/*Aplicamos flex grow al video*/
+.videoSobre-video {
+    flex-grow: 2;
+    /*Apolicamos shrink en 2*/
+    flex-shrink: 2;
+}
+
+/*Aplicamos flex grow a los items*/
+.videoSobre-sobre-list {
+    flex-grow: 2;
+}
+
+/*Alineamos los items en una sola columna y centramos el texto*/
+.videoSobre-sobre {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+/*-----Responsivo-----*/
+
+@media (max-width: 768px) {
+
+    /*Contenedor de header*/
+    .headerPrincipal .container {
+        /*Para que el título y navegador vayan uno debajo de otro*/
+        flex-direction: column;
+        /*Alinear horizontalmente al inicio (izquierda)*/
+        align-items: initial;
+        /*Centramos los textos*/
+        text-align: center;
+    }
+
+    /*Contenedor de navegador*/
+    .headerPrincipal-nav {
+        /*Para que los items del navegador vaya uno debajo de otro*/
+        flex-direction: column;
+    }
+
+    /*Contenedor cursos*/
+    .contenidoPrincipal-cursos {
+        /*Ponemos los cursos en columnas*/
+        flex-direction: column;
+
+    }
+
+    /*Contenedor de link de cursos*/
+    .contenidoPrincipal-cursos-link {
+        /*Aplicamos el 100% del ancho de la pantalla*/
+        width: 100%;
+    }
+
+    /*Nav contenedor del mapa de cursos*/
+    .rodapePrincipal-navMap-list {
+        /*Dejamos la altura en automático*/
+        height: auto;
+
+        /*Deshabilitamos el wrap para que no haya un salto de línea*/
+        flex-wrap: nowrap;
+    }
+
+    /*Entramos al container del footer y le damos dirección de columna para que los patrocinadores y formulario se alineen uno debajo de otro*/
+    .rodapePrincipal-patrocinadores .container {
+        flex-direction: column;
+    }
+
+    /*Alineamos los patrocinadores uno a lado de otro y centramos de forma horizontal*/
+    .rodapePrincipal-patrocinadores-list {
+        flex-direction: row;
+        align-items: center;
+
+        /*Le damos un porcentaje 100% de ancho para que los items se separen en toda la pantalla*/
+        width: 100%;
+
+        /*Le damos un margin 0*/
+        margin: 0;
+    }
+
+    /*Centramos el formulario*/
+    .rodapePrincipal-contatoForm-fieldset {
+        justify-content: center;
+    }
+
+    /*Aplicamos flex direction al contenedor del video para que estén en una sola columna*/
+    .videoSobre .container {
+        flex-direction: column;
+    }
+
+}
